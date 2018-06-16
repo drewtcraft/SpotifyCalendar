@@ -1,0 +1,17 @@
+DROP DATABASE IF EXISTS calendarDB;
+CREATE DATABASE calendarDB;
+
+/c calendarDB
+
+DROP TABLE IF EXISTS calendarEvents;
+CREATE TABLE calendarEvents (
+  id SERIAL PRIMARY KEY NOT NULL,
+  user_id TEXT NOT NULL,
+  year INTEGER NOT NULL,
+  month INTEGER NOT NULL,
+  day INTEGER NOT NULL,
+  hour INTEGER NOT NULL,
+  minute INTEGER NOT NULL,
+  title VARCHAR(200),
+  description TEXT NOT NULL
+)
