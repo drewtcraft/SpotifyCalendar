@@ -1,5 +1,7 @@
+//import model
 const model = require('../models/calendarModel.js')
 
+//export all controller functions for use in routes
 module.exports={
 
   getEvents(req, res, next) {
@@ -14,7 +16,9 @@ module.exports={
   },
 
   postEvent(req, res, next) {
-    model.postEvent(req.body)
+    let reqBody = JSON.parse(Object.keys(req.body)[0])
+    console.log('post event !!', reqBody)
+    model.postEvent(reqBody)
       .catch((err)=>{
         console.log('error in postEvent controller', err)
         next(err)

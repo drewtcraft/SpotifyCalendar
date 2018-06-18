@@ -6,11 +6,12 @@ module.exports = {
 
   getEvents() {
     return db.many (`
-      SELECT * FROM calendarEvents
+      SELECT * FROM calendarevents
       `)
   },
 
   postEvent(body) {
+    console.log('this the body in the model', body)
     return db.none (`
       INSERT INTO calendarEvents (
         user_id,
@@ -30,7 +31,7 @@ module.exports = {
         $/minute/,
         $/title/,
         $/description/
-      )`)
+      )`, body)
   },
 
   editEvent(id, body) {

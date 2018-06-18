@@ -5,10 +5,12 @@ const controller = require('../controllers/calendarController.js')
 
 //route for specific calendar events (get, post, put, delete)
 router.route('/events/:event_id')
-  .put()
-  .delete()
+  .put(controller.editEvent)
+  .delete(controller.deleteEvent)
 
 //route for reading all events
 router.route('/events')
-  .get()
-  .post()
+  .get(controller.getEvents)
+  .post(controller.postEvent)
+
+module.exports = router

@@ -19,5 +19,10 @@ app.get('/', (req,res)=>res.send('testing 123'))
 //set up calendar router
 app.use('/calendar', calendarRouter)
 
+//catch all errors
+// app.use((err, req, res, next) => {
+//   res.status(500).send('Something has gone terribly wrong. This machine is revolting!')
+// })
+
 //tell the server where to listen
 app.listen(port, () => console.log(`Listening on port ${port}`));
