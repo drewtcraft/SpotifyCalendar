@@ -1,7 +1,7 @@
 # SpotifyCalendar
 
 ### Summary
-Calendar app written in Swift with no third-party libraries/frameworks. Backend written in Node/Express. For Spotify fellowship application.
+Calendar app written in Swift with no third-party libraries/frameworks. Backend written in Node/Express. For Spotify fellowship application. *Since aesthetics were of no concern, this project was tested on the iPhone 8 simulator
 
 ### Features
 * Events have start time, end time, title, description
