@@ -1,4 +1,3 @@
-\c calendardb
 
 DROP TABLE IF EXISTS calendarevents;
 CREATE TABLE calendarevents (

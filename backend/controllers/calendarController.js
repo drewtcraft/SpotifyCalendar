@@ -26,10 +26,8 @@ module.exports={
   },
 
   editEvent(req, res, next) {
+    console.log("shit", req.body)
     model.editEvent(req.params.event_id, req.body)
-      .then((updatedEvent)=>{
-        res.send(updatedEvent)
-      })
       .catch((err)=>{
         console.log('error in editEvent controller', err)
         next(err)
@@ -37,6 +35,7 @@ module.exports={
   },
 
   deleteEvent(req, res, next) {
+    console.log('id', req.params.event_id)
     model.deleteEvent(req.params.event_id)
       .catch((err)=>{
         console.log('error in deleteEvent controller', err)

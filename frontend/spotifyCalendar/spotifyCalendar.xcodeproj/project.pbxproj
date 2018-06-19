@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		49E2B3BB20D58DDB00204325 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E2B3BA20D58DDB00204325 /* AppDelegate.swift */; };
-		49E2B3BD20D58DDB00204325 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E2B3BC20D58DDB00204325 /* FirstViewController.swift */; };
+		49E2B3BD20D58DDB00204325 /* calendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E2B3BC20D58DDB00204325 /* calendarViewController.swift */; };
 		49E2B3C220D58DDB00204325 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49E2B3C020D58DDB00204325 /* Main.storyboard */; };
 		49E2B3C420D58DDD00204325 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49E2B3C320D58DDD00204325 /* Assets.xcassets */; };
 		49E2B3C720D58DDD00204325 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49E2B3C520D58DDD00204325 /* LaunchScreen.storyboard */; };
@@ -18,12 +18,14 @@
 		49E2B3D920D7E7A400204325 /* eventsListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E2B3D820D7E7A400204325 /* eventsListTableViewController.swift */; };
 		49E2B3DB20D7E7BD00204325 /* eventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E2B3DA20D7E7BD00204325 /* eventTableViewCell.swift */; };
 		49E2B3DD20D8079C00204325 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E2B3DC20D8079C00204325 /* Helper.swift */; };
+		49E2B3E420D82AF100204325 /* newEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E2B3E320D82AF100204325 /* newEventViewController.swift */; };
+		49E2B3E820D9287500204325 /* globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E2B3E720D9287500204325 /* globals.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		49E2B3B720D58DDB00204325 /* spotifyCalendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = spotifyCalendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49E2B3BA20D58DDB00204325 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		49E2B3BC20D58DDB00204325 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		49E2B3BC20D58DDB00204325 /* calendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = calendarViewController.swift; sourceTree = "<group>"; };
 		49E2B3C120D58DDB00204325 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		49E2B3C320D58DDD00204325 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		49E2B3C620D58DDD00204325 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -34,6 +36,8 @@
 		49E2B3D820D7E7A400204325 /* eventsListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = eventsListTableViewController.swift; sourceTree = "<group>"; };
 		49E2B3DA20D7E7BD00204325 /* eventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = eventTableViewCell.swift; sourceTree = "<group>"; };
 		49E2B3DC20D8079C00204325 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		49E2B3E320D82AF100204325 /* newEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newEventViewController.swift; sourceTree = "<group>"; };
+		49E2B3E720D9287500204325 /* globals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = globals.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +71,7 @@
 			isa = PBXGroup;
 			children = (
 				49E2B3BA20D58DDB00204325 /* AppDelegate.swift */,
+				49E2B3E720D9287500204325 /* globals.swift */,
 				49E2B3E220D8082D00204325 /* viewControllers */,
 				49E2B3DF20D8080600204325 /* Classes */,
 				49E2B3C020D58DDB00204325 /* Main.storyboard */,
@@ -108,7 +113,8 @@
 		49E2B3E220D8082D00204325 /* viewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				49E2B3BC20D58DDB00204325 /* FirstViewController.swift */,
+				49E2B3BC20D58DDB00204325 /* calendarViewController.swift */,
+				49E2B3E320D82AF100204325 /* newEventViewController.swift */,
 				49E2B3D820D7E7A400204325 /* eventsListTableViewController.swift */,
 			);
 			path = viewControllers;
@@ -190,7 +196,9 @@
 				49E2B3D320D5A58A00204325 /* Event.swift in Sources */,
 				49E2B3DD20D8079C00204325 /* Helper.swift in Sources */,
 				49E2B3BB20D58DDB00204325 /* AppDelegate.swift in Sources */,
-				49E2B3BD20D58DDB00204325 /* FirstViewController.swift in Sources */,
+				49E2B3E420D82AF100204325 /* newEventViewController.swift in Sources */,
+				49E2B3E820D9287500204325 /* globals.swift in Sources */,
+				49E2B3BD20D58DDB00204325 /* calendarViewController.swift in Sources */,
 				49E2B3D920D7E7A400204325 /* eventsListTableViewController.swift in Sources */,
 				49E2B3D720D7D4D100204325 /* calendarCell.swift in Sources */,
 			);

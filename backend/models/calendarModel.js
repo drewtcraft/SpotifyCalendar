@@ -5,7 +5,7 @@ const db = pg(config);
 module.exports = {
 
   getEvents() {
-    return db.many (`
+    return db.any (`
       SELECT * FROM calendarevents
       `)
   },
@@ -18,8 +18,10 @@ module.exports = {
         year,
         month,
         day,
-        hour,
-        minute,
+        start_hour,
+        start_minute,
+        end_hour,
+        end_minute,
         title,
         description
       ) VALUES (
@@ -27,26 +29,30 @@ module.exports = {
         $/year/,
         $/month/,
         $/day/,
-        $/hour/,
-        $/minute/,
+        $/start_hour/,
+        $/start_minute/,
+        $/end_hour/,
+        $/end_minute/,
         $/title/,
         $/description/
       )`, body)
   },
 
   editEvent(id, body) {
-    return db.one (`
+    console.log(body.year)
+    return db.none (`
       UPDATE calendarEvents SET
-        year = ${body.year},
-        month = ${body.month},
-        day = ${body.day},
-        hour = ${body.hour},
-        minute = ${body.minute},
-        title = ${body.title},
-        description = ${body.description}
+        year = $/year/,
+        month = $/month/,
+        day = $/day/,
+        start_hour = $/start_hour/,
+        start_minute = $/start_minute/,
+        end_hour = $/end_hour/,
+        end_minute = $/end_minute/,
+        title = $/title/,
+        description = $/description/
       WHERE id = ${id}
-      RETURNING *
-      `)
+      `, body)
   },
 
   deleteEvent(id) {
