@@ -6,12 +6,13 @@ class calendarViewController: UIViewController, UICollectionViewDelegate, UIColl
     var calendarCells: [String] = []
     
     //set info for calendar cells and reload collection view
-    func makeCalendar(){
+    func makeCalendar(newMonth: Bool){
         
         print("count", globalEvents.selectedMonthEvents.count)
 
         
         calendarCells.removeAll()
+
         //create days of the week labels
         for day in helper.daysOfTheWeek {
             calendarCells.append(day)
@@ -32,17 +33,24 @@ class calendarViewController: UIViewController, UICollectionViewDelegate, UIColl
                 internalCounter += 1
             }
         }
+        print(calendarCells)
         
         //set name of current month
         monthName.text = helper.namesOfMonths[selectedMonth]
         
-        var indexPaths: [IndexPath] = []
-        
-        for i in 6 + startingDay...6 + startingDay + daysInSelectedMonth! {
-            indexPaths.append(IndexPath(row: i, section: 0))
+        if newMonth {
+            self.calendarCollection.reloadData()
         }
+        else {
+            var indexPaths: [IndexPath] = []
         
-        self.calendarCollection.reloadItems(at: indexPaths)
+            for i in 6 + startingDay...6 + startingDay + daysInSelectedMonth! {
+                indexPaths.append(IndexPath(row: i, section: 0))
+            }
+            
+            self.calendarCollection.reloadItems(at: indexPaths)
+            
+        }
     }
 
     //attach calendar collection view
@@ -57,9 +65,6 @@ class calendarViewController: UIViewController, UICollectionViewDelegate, UIColl
         //get day of the week of the first day of the month
         startingDay = (startingDay + helper.daysInMonths[selectedMonth]!) % 7
         
-        selectedDay = 0
-        globalEvents.selectedDayEvents.removeAll()
-        
         //increase month by one unless it is dec
         if selectedMonth < 12 {
             selectedMonth += 1
@@ -71,7 +76,7 @@ class calendarViewController: UIViewController, UICollectionViewDelegate, UIColl
         //get events for month
         globalEvents.setEventsForMonth(month: selectedMonth, year: selectedYear)
         //reload calendar
-        makeCalendar()
+        makeCalendar(newMonth: true)
         
     }
     
@@ -95,7 +100,7 @@ class calendarViewController: UIViewController, UICollectionViewDelegate, UIColl
         globalEvents.setEventsForMonth(month: selectedMonth, year: selectedYear)
 
         //reload calendar
-        makeCalendar()
+        makeCalendar(newMonth: true)
     }
     
     override func viewDidLoad() {
@@ -124,7 +129,7 @@ class calendarViewController: UIViewController, UICollectionViewDelegate, UIColl
         globalEvents.setEventsForMonth(month: selectedMonth, year: selectedYear)
         
         //set calendar
-        makeCalendar()
+        makeCalendar(newMonth: false)
 
     }
     
@@ -195,7 +200,7 @@ class calendarViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     override func viewWillAppear(_ animated: Bool) {
         print("this is being called")
-        makeCalendar()
+        makeCalendar(newMonth: false)
     }
     
     override func didReceiveMemoryWarning() {

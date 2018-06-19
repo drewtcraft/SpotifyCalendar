@@ -1,3 +1,4 @@
+\c calendardb
 
 DROP TABLE IF EXISTS calendarevents;
 CREATE TABLE calendarevents (
@@ -13,6 +14,3 @@ CREATE TABLE calendarevents (
   title VARCHAR(200),
   description TEXT NOT NULL
 );
-
-INSERT INTO calendarevents (user_id, year, month, day, start_hour, start_minute, end_hour, end_minute, title, description)
-VALUES ('user', 2018, 06, 18, 15, 45, 16, 55, 'title', 'description')
